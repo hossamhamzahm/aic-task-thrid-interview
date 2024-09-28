@@ -47,8 +47,6 @@ const show = async (req: Request, res: Response) => {
     const image = await Image.findOne({ where: { id } });
     if (!image) throw new ExpressError("Wrong image id!", 404)
 
-    // await image.update()
-
     res.status(200).send(image);
 }
 
